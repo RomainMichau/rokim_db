@@ -2,6 +2,8 @@ package com.rokim.db.Domain
 
 import com.rokim.db.Utils
 
+import scala.reflect.ClassTag
+
 sealed trait Value[U] {
   def dbType: DbType[U]
 
@@ -114,10 +116,14 @@ object LineValue {
   }
 }
 
-case class LineValue(values: Seq[ColumnValue[?]])
+case class LineValue(values: Seq[ColumnValue[?]]) {
+  def getColumn(name: String): ColumnValue[?] = values.find(_.name.name == name).get
+}
 
 case class AutoInc[U](col: Column[U], count: Long) {
   override def toString: String = {
     s"AUTOINC ${col.name.name} count\n"
   }
 }
+
+case class Index(name: String, columns: Seq[Column[?]])

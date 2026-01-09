@@ -30,5 +30,5 @@ metals.sbt
 .idea
 .idea_modules
 /.worksheet/
-
+test_dbs/
 ./test_dbs

@@ -13,6 +13,9 @@ lazy val root = project
       "org.typelevel" %% "cats-effect" % "3.5.7",
       "co.fs2" %% "fs2-core" % "3.11.0",
       "co.fs2" %% "fs2-io" % "3.11.0",
+      "io.circe" %% "circe-core" % "0.14.10",
+      "io.circe" %% "circe-generic" % "0.14.10",
+      "io.circe" %% "circe-parser" % "0.14.10",
       "org.scalameta" %% "munit" % "1.0.0" % Test
     )
   )
